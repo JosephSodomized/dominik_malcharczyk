@@ -19,3 +19,23 @@ header{
     transform: translate(-50%,-50%);
     font-family: 'Cutive Mono', monospace;
 }
+
+
+
+.skils{
+   float: right;
+   color: white;
+   position: absolute; 
+   right: 5%;
+   top: 10%;
+   transform: translate(-5%,-10%);
+}
+
+.hobbies{
+    float:left;
+    color: white;
+    position: absolute; 
+    left: 5%;
+    top: 90%;
+    transform: translate(-5%,-90%);
+ }
