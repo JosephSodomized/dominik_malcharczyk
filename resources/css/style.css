@@ -6,7 +6,7 @@
 
 header{
     height: 100vh;
-    background-image: url("/resources/img/flower.jpg");
+    background-image: url("../img/flower.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -38,4 +38,9 @@ header{
     left: 5%;
     top: 90%;
     transform: translate(-5%,-90%);
+ }
+
+ .date{
+     color: white;
+     margin-left: 30px;
  }
