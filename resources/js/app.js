@@ -1,29 +1,28 @@
 var el = document.getElementById('date');
 var elTime = document.getElementById('time');
 
-function formatData(date) {
-    var monthNames = [
-        "January", "February", "March",
-        "April", "May", "June", "July",
-        "August", "September", "October",
-        "November", "December"
-    ];
+function getDate(date){
 
-    var dayName = [
-        'Sunday', 'Monday', 'Tuesday', 'Wensday', 'Thursday', 'Friday', 'Saturday'
-    ];
+    var monthNames = ["January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"];
+
+    var dayNames = [ 'Sunday', 'Monday', 'Tuesday', 'Wensday', 'Thursday', 'Friday', 'Saturday']
 
     var dayIndex = date.getDay();
-    var day = date.getDate();
     var monthIndex = date.getMonth();
+    var today = date.getDate();
     var year = date.getFullYear();
-    return dayName[dayIndex] + ', ' + day + ' ' + monthNames[monthIndex] + ' ' + year;
 
-};
+    return dayNames[dayIndex] +', '+ monthNames[monthIndex] +' '+ today + ' ' + year;
+}
 
-el.textContent = formatData(new Date());
+el.textContent = getDate(new Date());
 
-function startTime() {
+
+function getTime(){
+
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
@@ -32,11 +31,11 @@ function startTime() {
     m = checkTime(m);
     s = checkTime(s);
 
-    elTime.textContent = h + ":" + m + ":" + s;
-    var t = setTimeout(startTime, 500);
+    elTime.textContent = h+':'+m+':'+s;
+    var g =  setTimeout(getTime, 500);
 }
 
-function checkTime(i) {
-    if (i < 10) { i = "0" + i };
+function checkTime(i){ //pobieramy wartość minut i sekund i dodajemy 0 jeśli jest mniejsza od 10
+    if(i < 10){i = '0' + i }
     return i;
 }
